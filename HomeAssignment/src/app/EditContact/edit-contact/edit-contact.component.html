@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h3>Edit Contact</h3>
+    <form [formGroup]="contactForm" (ngSubmit)="editContact()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+        <div *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched" class="text-danger">
+          First Name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+        <div *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched" class="text-danger">
+          Last Name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+          A valid Email is required.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Contact</button>
+      <a routerLink="/contact-list" class="btn btn-secondary ms-2" (click)="Cancel()">Cancel</a> <!-- Cancel button to navigate back -->
+    </form>
+  </div>
+  

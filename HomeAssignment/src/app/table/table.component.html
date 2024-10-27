@@ -1,0 +1,31 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactDetails ">
+        <!-- <td
+        (click)="selectedRow(contact.id)"
+        [class.table-primary]="selectedId === contact.id"
+        >{{ contact.id }}</td> -->
+        <td><a href="#" 
+          >{{ contact.id }}</a></td>
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.lastName }}</td>
+        <td>{{ contact.email }}</td>
+        <td>
+            <button class="btn btn-primary btn-sm me-2" (click)="editContact(contact.id)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteContact(contact)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
